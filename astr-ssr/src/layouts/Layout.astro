@@ -1,0 +1,41 @@
+---
+---
+
+<!DOCTYPE html>
+<body>
+	<div class="container-layout">
+		<header class="container-header">
+			<a href="/" class="link-layout">
+				Jujutsu{Astro.props.nombre ? ` - ${Astro.props.nombre}` : ""}
+			</a>
+		</header>
+		<div>
+			<slot />
+		</div>
+	</div>
+
+	<style>
+		body {
+			margin: 0;
+		}
+		.container-layout {
+			/* max-width: 60rem; */
+		}
+
+		.container-header {
+			display: flex;
+			padding: 1.25rem;
+			margin-bottom: 0.5rem;
+			background-color: #1d4ed8;
+			color: #ffffff;
+			font-size: 1.875rem;
+			line-height: 2.25rem;
+			font-weight: 700;
+		}
+		.link-layout {
+			flex-grow: 1;
+			color: inherit; /* blue colors for links too */
+			text-decoration: inherit; /* no underline */
+		}
+	</style>
+</body>

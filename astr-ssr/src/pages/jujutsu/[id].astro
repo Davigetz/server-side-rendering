@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Jujutsu } from "../../types";
+// version estatica
+// export async function getStaticPaths() {
+//     const res = await fetch("http:localhost:8080/jujutsu");
+//     const jujutsu = await res.json();
+//     return jujutsu.map((jujutsu) => ({
+//         params: {
+//             id: jujutsu.id.toString(),
+//         },
+//         props: {
+//             jujutsu,
+//         },
+//     }));
+// }
+
+// const jujutsu = Astro.props.jujutsu;
+const res = await fetch("http:localhost:8080/jujutsu");
+const allJujutsu = await res.json();
+
+const jujutsu = allJujutsu.find((j: Jujutsu) => j.id === +Astro.params.id);
+---
+
+<Layout
+    ><div class="container-detail">
+        <div class="img-detail-contrainer">
+            <img
+                src={`http://localhost:8080/images/${jujutsu.nombre
+                    .toLowerCase()
+                    .replace(" ", "_")}.png`}
+                alt={jujutsu.nombre}
+                class="img-detail"
+            />
+        </div>
+        <div>
+            <h1 class="detail-name">{jujutsu.nombre}</h1>
+            <div class="subtitle-detail">
+                {jujutsu.Anime && jujutsu.Anime.slice(0, 40)}
+            </div>
+            <div
+                class="container-text-detail"
+                style="grid-template-columns: 1fr 1fr"
+            >
+                <div class="texto-detail">Género</div>
+                <div>{jujutsu.Género}</div>
+                <div class="texto-detail">Estado</div>
+                <div>{jujutsu.Estado}</div>
+                <div class="texto-detail">Cumpleaños</div>
+                <div>{jujutsu.Cumpleaños}</div>
+                <div class="texto-detail">Edad</div>
+                <div>{jujutsu.Edad}</div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .container-detail {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .img-detail-contrainer {
+            max-width: 28rem;
+        }
+
+        .img-detail {
+            width: 100%;
+        }
+
+        .detail-name {
+            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .subtitle-detail {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-style: italic;
+        }
+
+        .container-text-detail {
+            display: grid;
+        }
+
+        .texto-detail {
+            margin-right: 1rem;
+            font-weight: 700;
+        }
+    </style>
+</Layout>
