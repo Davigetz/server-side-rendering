@@ -41,6 +41,6 @@ https://user-images.githubusercontent.com/19938780/186562012-050806b0-2576-448f-
 ## Conclusiones
 - ambas aplicaciones cuentan con una gran posibilidad de hacer un server-side rendering
 
-basado en la info de:
+basado en el desarrollo de y luego re implementado con otra api y tecnologías:
 - [Jack Herrington Github Repository](https://github.com/jherr/nextjs-to-astro)
 - [Jack Herrington video youtube](https://www.youtube.com/watch?v=PSzCtdM20Fc)
