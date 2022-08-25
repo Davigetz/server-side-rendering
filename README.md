@@ -30,9 +30,11 @@ En cada carpeta npm run start
 ![server side rendering](https://user-images.githubusercontent.com/19938780/186558365-66827bce-bf24-4576-b211-e3dfe5e04fb7.png)
 
 - NEXTjs
+
 https://user-images.githubusercontent.com/19938780/186561951-3a741ec1-38dd-4b00-8da0-12dc125553b0.mp4
 
 - Astrojs
+
 https://user-images.githubusercontent.com/19938780/186562012-050806b0-2576-448f-8b28-fb2f18d2c53b.mp4
 
 
